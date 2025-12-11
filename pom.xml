@@ -65,6 +65,21 @@
 			<artifactId>fastjson2</artifactId>
 			<version>2.0.57</version>
 		</dependency>
+		<dependency>
+			<groupId>com.auth0</groupId>
+			<artifactId>java-jwt</artifactId>
+			<version>4.4.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+			<version>3.5.7</version> <!-- 确保是 3.5.4+ 版本 -->
+		</dependency>
 	</dependencies>
 
 	<build>

@@ -16,6 +16,14 @@ public record RestBean<T>(int code, T data , String message) {//响应码、数�
         return new RestBean<>(code, null, message);
     }
 
+    public static <T> RestBean<T> unauthorized(String message){//未验证
+        return failure(401, message);
+    }
+
+    public static <T> RestBean<T> forbidden(String message){//没有权限
+        return failure(403, message);
+    }
+
     public String asJsonString() {
         return JSONObject.toJSONString(this, JSONWriter.Feature.WriteNulls);//Null值不序列化，避免前端报错
     }
