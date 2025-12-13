@@ -14,6 +14,16 @@ const router = createRouter({
                     path:"",
                     name:"welcome-longin",
                     component:()=>import("@/views/welcome/LoginPage.vue")
+                },
+                {
+                    path:"/register",
+                    name:"welcome-register",
+                    component:()=>import("@/views/welcome/RegisterPage.vue")
+                },
+                {
+                    path:"/reset",
+                    name:"welcome-reset",
+                    component:()=>import("@/views/welcome/ResetPage.vue")
                 }
             ]
         },

@@ -7,14 +7,6 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-      </profile>
-      <profile name="Annotation profile for my-project-backend" enabled="true">
-        <sourceOutputDir name="target/generated-sources/annotations" />
-        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
-        <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="true">
-          <entry name="D:/0_Environment/maven/repo/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
-        </processorPath>
         <module name="my-project-backend" />
       </profile>
     </annotationProcessing>
