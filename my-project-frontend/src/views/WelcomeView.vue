@@ -34,7 +34,7 @@
 .right-card {
   width: 400px;
   z-index: 1;
-  background-color: white;
+  background-color: var(--el-bg-color);
 }
 
 .welcome-title{
@@ -42,6 +42,7 @@
   bottom: 30px;
   left: 30px;
   color: aliceblue;
+  text-shadow: 0 0 10px black;
 }
 
 </style>
