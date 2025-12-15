@@ -1,0 +1,21 @@
+#生产环境配置
+spring:
+  mail:
+    host: smtp.163.com
+    username: ranbanshan@163.com
+    password: GWMdEwAnjqFjLVqy
+  rabbitmq:
+    addresses: localhost:5672
+    username: guest
+    password: guest
+  security:
+    filter:
+      order: -100
+    jwt:
+      key: abcdefghijk
+      expire: 7
+  datasource:
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: 12345
+    driver-class-name: com.mysql.cj.jdbc.Driver
