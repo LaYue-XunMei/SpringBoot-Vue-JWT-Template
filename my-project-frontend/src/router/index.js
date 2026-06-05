@@ -1,0 +1,50 @@
+import {createRouter, createWebHistory} from 'vue-router';
+import {unauthorized} from "@/net/index.js";
+
+
+const router = createRouter({
+    history: createWebHistory(import.meta.env.BASE_URL),
+    routes : [
+        {
+            path:'/',
+            name:'welcome',
+            component: () => import('@/views/WelcomeView.vue'),
+            children:[
+                {
+                    path:'',
+                    name:'welcome-login',
+                    component:() => import('@/views/welcome/LoginPage.vue')
+                },{
+                    path:'register',
+                    name:'welcome-register',
+                    component:()=> import('@/views/welcome/RegisterPage.vue')
+                },{
+                    path:'reset',
+                    name:'welcome-reset',
+                    component:()=> import('@/views/welcome/ResetPage.vue')
+                }
+
+            ]
+        },{
+            path:'/index',
+            name:'index',
+            component:()=> import('@/views/IndexView.vue')
+        }
+
+    ]
+
+})
+
+//路由守卫
+router.beforeEach((to,from,next)=>{//to是要去往的页面
+    const isUnauthorized = unauthorized()
+    if(to.name.startsWith('welcome-') && !isUnauthorized){//如果用户已经登录，不能再访问登录页面
+        next('/index')//重定向到index主页
+    }else if(to.fullPath.startsWith('/index') && isUnauthorized){
+        next("/")//如果没有登录就访问index主页，则重定向到登录页面
+    }else{
+        next()//正常情况
+    }
+})
+
+export default router;

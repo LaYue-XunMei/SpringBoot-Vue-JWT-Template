@@ -2,11 +2,12 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Annotation profile for my-project-backend" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <processorPath useClasspath="false">
+        <processorPath useClasspath="true">
           <entry name="$PROJECT_DIR$/../../../../0-Environment/maven/repository/org/projectlombok/lombok/unknown/lombok-unknown.jar" />
         </processorPath>
         <module name="my-project-backend" />
